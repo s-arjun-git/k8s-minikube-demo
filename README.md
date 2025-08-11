@@ -20,12 +20,12 @@ Make sure you have installed:
 ### 2️⃣ Start Minikube
 ```bash
 minikube start --driver=docker
-
+```
 This creates a single-node Kubernetes cluster locally.
-3️⃣ Create Deployment & Service Files
+### 3️⃣ Create Deployment & Service Files
 
 deployment.yaml
-
+```bash
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -47,9 +47,9 @@ spec:
           image: nginx:stable
           ports:
             - containerPort: 80
-
+```
 service.yaml
-
+```bash
 apiVersion: v1
 kind: Service
 metadata:
@@ -62,37 +62,37 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
-
-4️⃣ Deploy to Kubernetes
-
+```
+### 4️⃣ Deploy to Kubernetes
+```bash
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-
-5️⃣ Verify Deployment
-
+```
+### 5️⃣ Verify Deployment
+```bash
 kubectl get pods
 kubectl get svc
-
-6️⃣ Access the App
-
+```
+### 6️⃣ Access the App
+```bash
 minikube service nginx-service
-
+```
     On Windows/macOS: nginx welcome page opens in browser.
 
     On Linux: copy the URL from terminal and paste into browser.
 
-7️⃣ Scale the Deployment
-
+### 7️⃣ Scale the Deployment
+```bash
 kubectl scale deployment nginx-deployment --replicas=3
 kubectl get pods
-
-8️⃣ Describe a Pod & View Logs
-
+```
+### 8️⃣ Describe a Pod & View Logs
+```bash
 kubectl describe pod <pod-name>
 kubectl logs deployment/nginx-deployment
-
-9️⃣ Kubernetes Dashboard (Optional)
-
+```
+### 9️⃣ Kubernetes Dashboard (Optional)
+```bash
 minikube dashboard
-
+```
 Opens the Kubernetes UI in your browser.
