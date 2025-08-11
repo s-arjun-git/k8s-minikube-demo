@@ -1,6 +1,6 @@
 # Minikube Nginx Deployment (Kubernetes Local Cluster)
 
-This project demonstrates how to deploy the official **nginx** web server on a local Kubernetes cluster using **Minikube**, manage it with **kubectl**, and access it from your browser — all from the VS Code terminal.
+This project demonstrates how to deploy the official **nginx** web server on a local Kubernetes cluster using **Minikube**, manage it with **kubectl**, and access it from your browser.
 
 ---
 
@@ -15,11 +15,8 @@ Make sure you have installed:
 
 ## **Steps to Run**
 
-### 1️⃣ Open VS Code Terminal
-Press <kbd>Ctrl</kbd> + <kbd>`</kbd> (backtick) or go to **Terminal → New Terminal**.
-
+### 1️⃣ Open Terminal 
 ---
-
 ### 2️⃣ Start Minikube
 ```bash
 minikube start --driver=docker
